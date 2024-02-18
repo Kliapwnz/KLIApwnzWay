@@ -6,13 +6,13 @@ import {Profile} from "./components/Profile/Profile";
 
 
 function App() {
-    return (
-        <div className="app-wrapper">
-            <Header/>
-            <NavBar/>
-            <Profile/>
-        </div>
-    );
+   return (
+      <div className="app-wrapper">
+         <Header/>
+         <NavBar/>
+         <Profile/>
+      </div>
+   );
 }
 
 export default App;
