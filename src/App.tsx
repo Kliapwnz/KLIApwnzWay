@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.css';
+import {Header} from "./components/Header";
 
 
 function App() {
     return (
         <div className="app-wrapper">
-            <header className="header">
-
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png"
-                    alt="logo"/>
-            </header>
+            <Header/>
             <nav className="nav">
                 <div><a>Profile</a></div>
                 <div><a>Messages</a></div>
