@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.css';
-import {Header} from "./components/Header/Header";
-import {Technologies} from "./components/Technologies/Technologies";
-import {Footer} from "./components/Footer/Footer";
+
 
 function App() {
     return (
         <div className="App">
-            <Header/>
-            <Technologies/>
-            <Footer/>
+            <header>
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png"
+                    alt="logo"/>
+            </header>
+            <nav>
+                <div>Profile</div>
+                <div>Messages</div>
+                <div>Main content</div>
+            </nav>
         </div>
     );
 }
