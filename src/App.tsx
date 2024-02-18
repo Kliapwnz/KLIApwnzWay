@@ -1,19 +1,14 @@
 import React from 'react';
 import './App.css';
 import {Header} from "./components/Header";
+import {NavBar} from "./components/NavBar";
 
 
 function App() {
     return (
         <div className="app-wrapper">
             <Header/>
-            <nav className="nav">
-                <div><a>Profile</a></div>
-                <div><a>Messages</a></div>
-                <div><a>News</a></div>
-                <div><a>Music</a></div>
-                <div><a>Settings</a></div>
-            </nav>
+            <NavBar/>
             <div className="content">
                 <div>
                     <img
