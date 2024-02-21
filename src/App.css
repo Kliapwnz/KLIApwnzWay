@@ -10,6 +10,10 @@
     color: white;
 }
 
+.app-wrapper-content {
+    grid-area: c;
+    background-color: #8CA495;
+}
 
 
 
