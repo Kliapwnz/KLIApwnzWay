@@ -3,6 +3,7 @@ import './App.css';
 import {Header} from "./components/Header/Header";
 import {NavBar} from "./components/NavBar/NavBar";
 import {Profile} from "./components/Profile/Profile";
+import {MyMessages} from "./components/MyMessages/MyMessages";
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <div className="app-wrapper">
          <Header/>
          <NavBar/>
-         <Profile/>
+         {/*<Profile/>*/}
+         <MyMessages/>
       </div>
    );
 }
