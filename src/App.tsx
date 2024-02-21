@@ -4,7 +4,7 @@ import {Header} from "./components/Header/Header";
 import {NavBar} from "./components/NavBar/NavBar";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Profile} from "./components/Profile/Profile";
-import {MyMessages} from "./components/MyMessages/MyMessages";
+import {Dialogs} from "./components/MyMessages/Dialogs";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
             <div className="app-wrapper-content">
                <Routes>
                   <Route path="/profile" element={<Profile/>}/>
-                  <Route path="/dialogs" element={<MyMessages/>}/>
+                  <Route path="/dialogs" element={<Dialogs/>}/>
                </Routes>
             </div>
 

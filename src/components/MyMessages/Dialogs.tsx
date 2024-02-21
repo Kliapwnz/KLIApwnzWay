@@ -1,7 +1,7 @@
 import React from 'react';
-import s from "./MyMessages.module.css"
+import s from "./Dialogs.module.css"
 
-export const MyMessages = () => {
+export const Dialogs = () => {
    return (
       <div className={s.messages}>
          messages
