@@ -12,8 +12,8 @@ function App() {
          <Header/>
          <NavBar/>
          <div className="app-wrapper-content">
-         {/*<Profile/>*/}
-         <MyMessages/>
+            {/*<Profile/>*/}
+            <MyMessages/>
          </div>
       </div>
    );
