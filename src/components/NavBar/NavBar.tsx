@@ -5,11 +5,11 @@ import {NavLink} from "react-router-dom";
 export const NavBar = () => {
    return (
       <nav className={s.nav}>
-         <div><NavLink to="/profile">Profile</NavLink></div>
-         <div><NavLink to="/dialogs">Messages</NavLink></div>
-         <div><NavLink to="/news">News</NavLink></div>
-         <div><NavLink to="/music">Music</NavLink></div>
-         <div><NavLink to="/settings">Setting</NavLink></div>
+         <div className={s.item}><NavLink to="/profile" className={e => e.isActive ? s.active : s.item}>Profile</NavLink></div>
+         <div className={s.item}><NavLink to="/dialogs" className={e => e.isActive ? s.active : s.item}>Messages</NavLink></div>
+         <div className={s.item}><NavLink to="/news" className={e => e.isActive ? s.active : s.item}>News</NavLink></div>
+         <div className={s.item}><NavLink to="/music" className={e => e.isActive ? s.active : s.item}>Music</NavLink></div>
+         <div className={s.item}><NavLink to="/settings" className={e => e.isActive ? s.active : s.item}>Setting</NavLink></div>
       </nav>
    );
 };
