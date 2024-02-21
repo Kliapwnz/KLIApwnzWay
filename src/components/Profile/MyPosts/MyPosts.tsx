@@ -11,8 +11,8 @@ export const MyPosts = () => {
          </div>
          <div>
             <Post title="How are you, guys?" likesCount={81}/>
-            <Post title="Hello all" likesCount={4}/>
             <Post title="My second post" likesCount={12}/>
+            <Post title="Hello all" likesCount={4}/>
          </div>
       </div>
    );
