@@ -1,8 +1,9 @@
 import React from 'react';
+import s from "./MyMessages.module.css"
 
 export const MyMessages = () => {
    return (
-      <div>
+      <div className={s.messages}>
          messages
       </div>
    );
