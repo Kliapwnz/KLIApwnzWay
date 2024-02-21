@@ -10,9 +10,9 @@ export const MyPosts = () => {
             <button>Add Post</button>
          </div>
          <div>
-            <Post title="How are you, guys?" likesCount={81}/>
-            <Post title="My second post" likesCount={12}/>
-            <Post title="Hello all" likesCount={4}/>
+            <Post text="How are you, guys?" likesCount={81}/>
+            <Post text="My second post" likesCount={12}/>
+            <Post text="Hello all" likesCount={4}/>
          </div>
       </div>
    );
