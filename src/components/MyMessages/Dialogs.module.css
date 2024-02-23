@@ -7,11 +7,6 @@
     padding: 10px;
 }
 
-.dialog {
-    color: #1B221B;
-    text-decoration: none;
-}
-
 .messages {
     padding: 10px;
 }
@@ -20,7 +15,3 @@
 
 }
 
-.active {
-    color: #27aae1;
-    text-decoration: none;
-}

@@ -1,47 +1,18 @@
 import React from 'react';
 import s from "./Dialogs.module.css"
-import {NavLink} from "react-router-dom";
+import {DialogItem} from "./DialogItem/DialogItem";
+
 
 export const Dialogs = () => {
    return (
       <div className={s.dialogs}>
          <div className={s.dialogItems}>
-            <div className={s.dialog}>
-               <NavLink to="/dialogs/kun"
-                        className={e => e.isActive ? s.active : s.dialog}>
-                  Sergio Aguero
-               </NavLink>
-            </div>
-            <div className={s.dialog}>
-               <NavLink to="/dialogs/Erl9"
-                        className={e => e.isActive ? s.active : s.dialog}>
-                  Erling Haaland
-               </NavLink>
-            </div>
-            <div className={s.dialog}>
-               <NavLink to="/dialogs/davidSilva"
-                        className={e => e.isActive ? s.active : s.dialog}>
-                  David Silva
-               </NavLink>
-            </div>
-            <div className={s.dialog}>
-               <NavLink to="/dialogs/berny"
-                        className={e => e.isActive ? s.active : s.dialog}>
-                  Bernardo Silva
-               </NavLink>
-            </div>
-            <div className={s.dialog}>
-               <NavLink to="/dialogs/walkerK"
-                        className={e => e.isActive ? s.active : s.dialog}>
-                  Kyle Walker
-               </NavLink>
-            </div>
-            <div className={s.dialog}>
-               <NavLink to="/dialogs/47Foden"
-                        className={e => e.isActive ? s.active : s.dialog}>
-                  Phil Foden
-               </NavLink>
-            </div>
+            <DialogItem  name="Sergio Aguero" id="kun"/>
+            <DialogItem  name="Erling Haaland" id="Erl9"/>
+            <DialogItem  name="David Silva" id="davidSilva"/>
+            <DialogItem  name="Bernardo Silva" id="berny"/>
+            <DialogItem  name="Kyle Walker" id="walkerK"/>
+            <DialogItem  name="Phil Foden" id="47Foden"/>
          </div>
          <div className={s.messages}>
             <div className={s.message}>Hi</div>
