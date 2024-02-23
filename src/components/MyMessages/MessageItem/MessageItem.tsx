@@ -1,4 +1,4 @@
-import s from "MessageItem.module.css";
+import s from "./MessageItem.module.css";
 import React from "react";
 
 type MessageItemType={
