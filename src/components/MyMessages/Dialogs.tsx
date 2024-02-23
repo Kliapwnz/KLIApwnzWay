@@ -5,12 +5,12 @@ export const Dialogs = () => {
    return (
       <div className={s.dialogs}>
          <div className={s.dialogItems}>
-            <div className={s.dialog}>Sergio Aguero</div>
-            <div className={s.dialog}>Erling Haaland</div>
-            <div className={s.dialog}>David Silva</div>
-            <div className={s.dialog}>Bernardo Silva</div>
-            <div className={s.dialog}>Kyle Walker</div>
-            <div className={s.dialog}>Phil Foden</div>
+            <div className={s.dialog + " " + s.active}>Sergio Aguero</div>
+            <div className={'${s.dialog} ${s.active}'}>Erling Haaland</div>
+            <div className={'${s.dialog} ${s.active}'}>David Silva</div>
+            <div className={'${s.dialog} ${s.active}'}>Bernardo Silva</div>
+            <div className={'${s.dialog} ${s.active}'}>Kyle Walker</div>
+            <div className={'${s.dialog} ${s.active}'}>Phil Foden</div>
          </div>
          <div className={s.messages}>
             <div className={s.message}>Hi</div>
