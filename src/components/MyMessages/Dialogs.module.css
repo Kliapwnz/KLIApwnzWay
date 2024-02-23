@@ -7,8 +7,9 @@
     padding: 10px;
 }
 
-.dialog {
-    color: white;
+.dialog a{
+    color: #1B221B;
+    text-decoration: none;
 }
 
 .messages {
