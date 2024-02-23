@@ -11,7 +11,7 @@ export const NavBar = () => {
             </NavLink>
          </div>
          <div className={s.item}>
-            <NavLink to="/dialogs"
+            <NavLink to="/dialogs/"
                      className={e => e.isActive ? s.active : s.item}>Messages
             </NavLink>
          </div>

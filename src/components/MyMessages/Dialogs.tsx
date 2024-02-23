@@ -6,23 +6,23 @@ export const Dialogs = () => {
    return (
       <div className={s.dialogs}>
          <div className={s.dialogItems}>
-            <div className={s.dialog + " " + s.active}>
-               <NavLink to="/dialogs/kun" >Sergio Aguero</NavLink>
+            <div className={s.dialog}>
+               <NavLink to="/dialogs/kun" className={e => e.isActive ? s.active : s.dialog}>Sergio Aguero</NavLink>
             </div>
             <div className={s.dialog}>
-               <NavLink to="/dialogs/Erl9" > Erling Haaland</NavLink>
+               <NavLink to="/dialogs/Erl9" className={e => e.isActive ? s.active : s.dialog}> Erling Haaland</NavLink>
             </div>
             <div className={s.dialog}>
-               <NavLink to="/dialogs/davidSilva" >David Silva</NavLink>
+               <NavLink to="/dialogs/davidSilva" className={e => e.isActive ? s.active : s.dialog}>David Silva</NavLink>
             </div>
             <div className={s.dialog}>
-               <NavLink to="/dialogs/berny" >Bernardo Silva</NavLink>
+               <NavLink to="/dialogs/berny" className={e => e.isActive ? s.active : s.dialog}>Bernardo Silva</NavLink>
             </div>
             <div className={s.dialog}>
-               <NavLink to="/dialogs/walkerK" >Kyle Walker</NavLink>
+               <NavLink to="/dialogs/walkerK" className={e => e.isActive ? s.active : s.dialog}>Kyle Walker</NavLink>
             </div>
             <div className={s.dialog}>
-               <NavLink to="/dialogs/47Foden" >Phil Foden</NavLink>
+               <NavLink to="/dialogs/47Foden" className={e => e.isActive ? s.active : s.dialog}>Phil Foden</NavLink>
             </div>
          </div>
          <div className={s.messages}>
