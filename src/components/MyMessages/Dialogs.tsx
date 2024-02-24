@@ -13,6 +13,12 @@ let dialogsData = [
    {id: 6, name: "Phil Foden"},
 ]
 
+let messagesData = [
+   {message:"Hi"},
+   {message:"How are you?"},
+   {message:"Have a good day!"},
+]
+
 export const Dialogs = () => {
    return (
       <div className={s.dialogs}>
@@ -20,9 +26,7 @@ export const Dialogs = () => {
             {dialogsData.map(el => <DialogItem name={el.name} id={el.id}/>)}
          </div>
          <div className={s.messages}>
-            <MessageItem message="Hi"/>
-            <MessageItem message="How are you?"/>
-            <MessageItem message="Have a good day!"/>
+            {messagesData.map(el=> <MessageItem message={el.message}/>)}
          </div>
       </div>
    );
