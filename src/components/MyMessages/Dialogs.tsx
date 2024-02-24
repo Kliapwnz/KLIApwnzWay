@@ -14,19 +14,21 @@ let dialogsData = [
 ]
 
 let messagesData = [
-   {id:1, message:"Hi"},
-   {id:2, message:"How are you?"},
-   {id:3, message:"Have a good day!"},
+   {id: 1, message: "Hi"},
+   {id: 2, message: "How are you?"},
+   {id: 3, message: "Have a good day!"},
 ]
 
 export const Dialogs = () => {
+   let dialogsElements = dialogsData.map(el => <DialogItem name={el.name} id={el.id}/>)
+   let messagesElements = messagesData.map(el => <MessageItem message={el.message}/>)
    return (
       <div className={s.dialogs}>
          <div className={s.dialogItems}>
-            {dialogsData.map(el => <DialogItem name={el.name} id={el.id}/>)}
+            {dialogsElements}
          </div>
          <div className={s.messages}>
-            {messagesData.map(el=> <MessageItem message={el.message}/>)}
+            {messagesElements}
          </div>
       </div>
    );
