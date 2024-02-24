@@ -14,9 +14,9 @@ let dialogsData = [
 ]
 
 let messagesData = [
-   {message:"Hi"},
-   {message:"How are you?"},
-   {message:"Have a good day!"},
+   {id:1, message:"Hi"},
+   {id:2, message:"How are you?"},
+   {id:3, message:"Have a good day!"},
 ]
 
 export const Dialogs = () => {
