@@ -10,7 +10,7 @@ export const ProfileInfo = () => {
                alt="content"
             />
          </div>
-         <div>
+         <div className={s.descriptionBlock}>
             ava + description
          </div>
       </div>
