@@ -4,16 +4,20 @@ import {DialogItem} from "./DialogItem/DialogItem";
 import {MessageItem} from "./MessageItem/MessageItem";
 
 
+let dialogsData = [
+   {id: 1, name: "Sergio Aguero"},
+   {id: 2, name: "Erling Haaland"},
+   {id: 3, name: "David Silva"},
+   {id: 4, name: "Bernardo Silva"},
+   {id: 5, name: "Kyle Walker"},
+   {id: 6, name: "Phil Foden"},
+]
+
 export const Dialogs = () => {
    return (
       <div className={s.dialogs}>
          <div className={s.dialogItems}>
-            <DialogItem  name="Sergio Aguero" id="kun"/>
-            <DialogItem  name="Erling Haaland" id="Erl9"/>
-            <DialogItem  name="David Silva" id="davidSilva"/>
-            <DialogItem  name="Bernardo Silva" id="berny"/>
-            <DialogItem  name="Kyle Walker" id="walkerK"/>
-            <DialogItem  name="Phil Foden" id="47Foden"/>
+            {dialogsData.map(el => <DialogItem name={el.name} id={el.id}/>)}
          </div>
          <div className={s.messages}>
             <MessageItem message="Hi"/>
