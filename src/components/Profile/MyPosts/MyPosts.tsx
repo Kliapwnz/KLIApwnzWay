@@ -5,7 +5,7 @@ import s from "./MyPosts.module.css"
 export const MyPosts = () => {
    return (
       <div className={s.postsBlock}>
-         My posts
+        <h3>My posts</h3>
          <div>
             <div>
                <textarea></textarea>
@@ -14,7 +14,7 @@ export const MyPosts = () => {
                <button>Add Post</button>
             </div>
          </div>
-         <div>
+         <div className={s.posts}>
             <Post text="How are you, guys?" likesCount={81}/>
             <Post text="My second post" likesCount={12}/>
             <Post text="Hello all" likesCount={4}/>
