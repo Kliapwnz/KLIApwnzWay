@@ -7,10 +7,10 @@ let postsData = [
    {id: 2, text: "My second post", likesCount: 12},
    {id: 3, text: "Hello all", likesCount: 4},
 ]
-
+let postElement = postsData.map(el => <Post text={el.text} likesCount={el.likesCount}/>)
 
 export const MyPosts = () => {
-   let postElement = postsData.map(el => <Post text={el.text} likesCount={el.likesCount}/>)
+
    return (
       <div className={s.postsBlock}>
          <h3>My posts</h3>
