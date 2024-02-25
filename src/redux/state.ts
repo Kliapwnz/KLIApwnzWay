@@ -8,7 +8,7 @@ type DialogsType = {
 }
 type PostType = {
    id: number
-   message: string
+   text: string
    likesCount: number
 }
 
@@ -29,7 +29,7 @@ type RootStateType={
    sidebar: SidebarType
 }
 
-export let state = {
+export let state:RootStateType = {
    profilePage: {
       posts: [
          {id: 1, text: "How are you, guys?", likesCount: 81},
