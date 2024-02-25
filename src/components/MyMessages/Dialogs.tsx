@@ -4,9 +4,6 @@ import {DialogItem} from "./DialogItem/DialogItem";
 import {MessageItem} from "./MessageItem/MessageItem";
 
 
-
-
-
 let dialogsElements = dialogsData.map(el => <DialogItem name={el.name} id={el.id}/>)
 let messagesElements = messagesData.map(el => <MessageItem message={el.message}/>)
 

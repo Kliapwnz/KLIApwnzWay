@@ -20,16 +20,14 @@ type DialogPageType = {
    messages: Array<MessageType>
 }
 
-type SidebarType={
-
-}
-type RootStateType={
-   profilePage:ProfilePageType
+type SidebarType = {}
+type RootStateType = {
+   profilePage: ProfilePageType
    dialogsPage: DialogPageType
    sidebar: SidebarType
 }
 
-export let state:RootStateType = {
+export let state: RootStateType = {
    profilePage: {
       posts: [
          {id: 1, text: "How are you, guys?", likesCount: 81},
