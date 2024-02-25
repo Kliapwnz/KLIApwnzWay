@@ -1,3 +1,34 @@
+type MessageType = {
+   id: number
+   message: string
+}
+type DialogsType = {
+   id: number
+   name: string
+}
+type PostType = {
+   id: number
+   message: string
+   likesCount: number
+}
+
+type ProfilePageType = {
+   posts: Array<PostType>
+}
+type DialogPageType = {
+   dialogs: Array<DialogsType>
+   messages: Array<MessageType>
+}
+
+type SidebarType={
+
+}
+type RootStateType={
+   profilePage:ProfilePageType
+   dialogsPage: DialogPageType
+   sidebar: SidebarType
+}
+
 export let state = {
    profilePage: {
       posts: [
@@ -21,5 +52,5 @@ export let state = {
          {id: 3, message: "Have a good day!"},
       ]
    },
-   sidebar:{}
+   sidebar: {}
 }
