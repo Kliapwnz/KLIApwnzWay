@@ -9,23 +9,23 @@ type MyPostsType = {
 
 
 export const MyPosts = (props: MyPostsType) => {
-   let postElement =  props.posts.map(el => <Post text={el.text} likesCount={el.likesCount}/>)
+   let postElement = props.posts.map(el => <Post text={el.text} likesCount={el.likesCount}/>)
 
-return (
-   <div className={s.postsBlock}>
-      <h3>My posts</h3>
-      <div>
+   return (
+      <div className={s.postsBlock}>
+         <h3>My posts</h3>
          <div>
-            <textarea></textarea>
+            <div>
+               <textarea></textarea>
+            </div>
+            <div>
+               <button>Add Post</button>
+            </div>
          </div>
-         <div>
-            <button>Add Post</button>
+         <div className={s.posts}>
+            {postElement}
          </div>
       </div>
-      <div className={s.posts}>
-         {postElement}
-      </div>
-   </div>
-);
+   );
 };
 

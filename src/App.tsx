@@ -7,11 +7,11 @@ import {Profile} from "./components/Profile/Profile";
 import {Dialogs} from "./components/MyMessages/Dialogs";
 import {RootStateType} from "./redux/state";
 
-type AppType={
-   state:RootStateType
+type AppType = {
+   state: RootStateType
 }
 
-function App(props:AppType) {
+function App(props: AppType) {
    return (
       <BrowserRouter>
          <div className="app-wrapper">
@@ -19,8 +19,8 @@ function App(props:AppType) {
             <NavBar/>
             <div className="app-wrapper-content">
                <Routes>
-                  <Route path="/profile" element={<Profile profile={props.state.profilePage}/>}  />
-                  <Route path="/dialogs/*" element={<Dialogs dialogs={props.state.dialogsPage} />}/>
+                  <Route path="/profile" element={<Profile profile={props.state.profilePage}/>}/>
+                  <Route path="/dialogs/*" element={<Dialogs dialogs={props.state.dialogsPage}/>}/>
                </Routes>
             </div>
 
