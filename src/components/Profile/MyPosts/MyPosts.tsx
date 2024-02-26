@@ -26,7 +26,7 @@ export const MyPosts = (props: MyPostsType) => {
          <h3>My posts</h3>
          <div>
             <div>
-               <textarea ref={newPostElement}></textarea>
+               <textarea ref={newPostElement} value={"KLIAPWNZ"}/>
             </div>
             <div>
                <button onClick={addPost}>Add Post</button>
