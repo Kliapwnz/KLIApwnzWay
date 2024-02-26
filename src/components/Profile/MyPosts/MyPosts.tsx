@@ -1,30 +1,24 @@
-import React, {MouseEventHandler, RefObject} from 'react';
+import React, {ChangeEvent} from 'react';
 import {Post} from "./Post/Post";
 import s from "./MyPosts.module.css"
-import {PostType, updatePostText} from "../../../redux/state";
+import {PostType} from "../../../redux/state";
 
 type MyPostsType = {
    posts: PostType[]
    addPost: (post: string) => void
    updatePostText: (newText: string) => void
-   text:string
+   text: string
 }
 
 
 export const MyPosts = (props: MyPostsType) => {
 
-   let newPostElement = React.createRef<HTMLTextAreaElement>()
+
    let addPost = () => {
-      if (newPostElement.current) {
-         props.addPost(newPostElement.current.value)
-         newPostElement.current.value = ""
-      }
+      props.addPost(props.text)
    }
-   let onPostChange = () => {
-      if (newPostElement.current){
-         let text = newPostElement.current.value
-         props.updatePostText(text)
-      }
+   let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+      props.updatePostText(e.currentTarget.value)
    }
    let postElement = props.posts.map(el => <Post text={el.text} likesCount={el.likesCount}/>)
 
@@ -33,8 +27,7 @@ export const MyPosts = (props: MyPostsType) => {
          <h3>My posts</h3>
          <div>
             <div>
-               <textarea ref={newPostElement}
-                         value={props.text}
+               <textarea value={props.text}
                          onChange={onPostChange}/>
             </div>
             <div>
