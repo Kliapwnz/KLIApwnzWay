@@ -8,6 +8,7 @@ type ProfileType = {
    profile: ProfilePageType
    addPost: (post: string) => void
    updatePostText: (newText: string) => void
+   text:string
 }
 
 
@@ -17,7 +18,8 @@ export const Profile = (props: ProfileType) => {
          <ProfileInfo/>
          <MyPosts posts={props.profile.posts}
                   addPost={props.addPost}
-                  updatePostText={props.updatePostText}/>
+                  updatePostText={props.updatePostText}
+                  text={props.text}/>
       </div>
    );
 };

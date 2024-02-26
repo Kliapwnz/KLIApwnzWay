@@ -10,7 +10,8 @@ import {RootStateType, updatePostText} from "./redux/state";
 type AppType = {
    state: RootStateType
    addPost: (post: string) => void
-   updatePostText:(newText:string)=>void
+   updatePostText: (newText: string) => void
+   text:string
 }
 
 function App(props: AppType) {
@@ -22,9 +23,14 @@ function App(props: AppType) {
             <div className="app-wrapper-content">
                <Routes>
                   <Route path="/profile"
-                         element={<Profile profile={props.state.profilePage} addPost={props.addPost}
-                                           updatePostText={props.updatePostText}/>}/>
-                  <Route path="/dialogs/*" element={<Dialogs dialogs={props.state.dialogsPage}/>}/>
+                         element={<Profile profile={props.state.profilePage}
+                                           addPost={props.addPost}
+                                           updatePostText={props.updatePostText}
+                                           text={props.text}
+                         />}/>
+                  <Route path="/dialogs/*"
+                         element={<Dialogs dialogs={props.state.dialogsPage}
+                         />}/>
                </Routes>
             </div>
 
