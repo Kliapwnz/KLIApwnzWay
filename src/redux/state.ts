@@ -53,9 +53,9 @@ export let state: RootStateType = {
    sidebar: {}
 }
 
-export let addPost=(post:string)=>{
-   let newPost={
-      id:5,
+export let addPost = (post: string) => {
+   let newPost: PostType = {
+      id: new Date().getTime(),
       text: post,
       likesCount: 0
    }
