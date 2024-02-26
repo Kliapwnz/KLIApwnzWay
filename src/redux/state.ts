@@ -53,7 +53,7 @@ export let state: RootStateType = {
    sidebar: {}
 }
 
-let addPost=(post:string)=>{
+export let addPost=(post:string)=>{
    let newPost={
       id:5,
       text: post,
