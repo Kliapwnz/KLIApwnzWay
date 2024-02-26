@@ -16,6 +16,7 @@ export type PostType = {
 
 export type ProfilePageType = {
    posts: Array<PostType>
+   newPostText:string
 }
 export type DialogPageType = {
    dialogs: Array<DialogsType>
@@ -35,7 +36,8 @@ export let state: RootStateType = {
          {id: 1, text: "How are you, guys?", likesCount: 81},
          {id: 2, text: "My second post", likesCount: 12},
          {id: 3, text: "Hello all", likesCount: 4},
-      ]
+      ],
+      newPostText:"Hello"
    },
    dialogsPage: {
       dialogs: [

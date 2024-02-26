@@ -5,7 +5,7 @@ import React from "react";
 
 export let rerenderEntireTree = (state: RootStateType) => {
    ReactDOM.render(
-      <App state={state} addPost={addPost}/>,
+      <App state={state} addPost={addPost} newPostText={state.profilePage.newPostText}/>,
       document.getElementById('root')
    );
 }
