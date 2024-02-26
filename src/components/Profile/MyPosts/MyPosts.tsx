@@ -1,12 +1,12 @@
 import React, {MouseEventHandler, RefObject} from 'react';
 import {Post} from "./Post/Post";
 import s from "./MyPosts.module.css"
-import {PostType} from "../../../redux/state";
+import {PostType, updatePostText} from "../../../redux/state";
 
 type MyPostsType = {
    posts: PostType[]
    addPost: (post: string) => void
-   newPostText:string
+   updatePostText: (newText: string) => void
 }
 
 
@@ -20,7 +20,10 @@ export const MyPosts = (props: MyPostsType) => {
       }
    }
    let onPostChange = () => {
-
+      if (newPostElement.current){
+         let text = newPostElement.current.value
+         props.updatePostText(text)
+      }
    }
    let postElement = props.posts.map(el => <Post text={el.text} likesCount={el.likesCount}/>)
 
@@ -30,7 +33,7 @@ export const MyPosts = (props: MyPostsType) => {
          <div>
             <div>
                <textarea ref={newPostElement}
-                         value={props.newPostText}/>
+                         onChange={onPostChange}/>
             </div>
             <div>
                <button onClick={addPost}>Add Post</button>
