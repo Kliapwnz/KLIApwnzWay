@@ -10,6 +10,13 @@ type DialogsType = {
 
 
 export const Dialogs = (props: DialogsType) => {
+
+   let newPostElement = React.createRef<HTMLTextAreaElement>()
+   let addMessage = () => {
+      let text = newPostElement.current?.value
+      alert(text)
+   }
+
    let dialogsElements = props.dialogs.dialogs.map(el => <DialogItem name={el.name} id={el.id}/>)
    let messagesElements = props.dialogs.messages.map(el => <MessageItem message={el.message}/>)
    return (
@@ -19,6 +26,12 @@ export const Dialogs = (props: DialogsType) => {
          </div>
          <div className={s.messages}>
             {messagesElements}
+            <div>
+               <textarea ref={newPostElement}></textarea>
+            </div>
+            <div>
+               <button onClick={addMessage}>send message</button>
+            </div>
          </div>
       </div>
    );
