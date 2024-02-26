@@ -13,9 +13,12 @@ export const MyPosts = (props: MyPostsType) => {
 
    let newPostElement = React.createRef<HTMLTextAreaElement>()
    let addPost = () => {
-      if (newPostElement.current)
+      if (newPostElement.current){
          props.addPost(newPostElement.current.value)
+         newPostElement.current.value = ""
+      }
    }
+
    let postElement = props.posts.map(el => <Post text={el.text} likesCount={el.likesCount}/>)
 
    return (
