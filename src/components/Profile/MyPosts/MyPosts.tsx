@@ -29,7 +29,7 @@ export const MyPosts = (props: MyPostsType) => {
             <div>
                <textarea value={props.text}
                          onChange={onPostChange}
-                         placeholder="Что нового"
+                         placeholder="Что у вас нового?"
                />
             </div>
             <div>
