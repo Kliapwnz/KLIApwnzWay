@@ -8,7 +8,7 @@ type DialogsType = {
    dialogs: DialogPageType
    addMessage: (message: string) => void
    messageText: string
-   updateMessageText:(newText:string)=>void
+   updateMessageText: (newText: string) => void
 }
 
 

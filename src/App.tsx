@@ -14,8 +14,8 @@ type AppType = {
    updatePostText: (newText: string) => void
    text: string
    addMessage: (message: string) => void
-   messageText:string
-   updateMessageText:(newText:string)=> void
+   messageText: string
+   updateMessageText: (newText: string) => void
 }
 
 function App(props: AppType) {

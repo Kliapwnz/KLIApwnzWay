@@ -22,7 +22,7 @@ export type ProfilePageType = {
 export type DialogPageType = {
    dialogs: Array<DialogsType>
    messages: Array<MessageType>
-   newMessageText:string
+   newMessageText: string
 }
 
 export type SidebarType = {}
@@ -55,20 +55,20 @@ export let state: RootStateType = {
          {id: 2, message: "How are you?"},
          {id: 3, message: "Have a good day!"},
       ],
-      newMessageText:""
+      newMessageText: ""
    },
    sidebar: {}
 }
 
-export let addMessage = (message:string) => {
-   let newMessage:MessageType = {
+export let addMessage = (message: string) => {
+   let newMessage: MessageType = {
       id: new Date().getTime(),
-      message:message
+      message: message
    }
    state.dialogsPage.messages.push(newMessage)
    rerenderEntireTree(state)
 }
-export let updateMessageText = (newText:string) => {
+export let updateMessageText = (newText: string) => {
    state.dialogsPage.newMessageText = newText
    rerenderEntireTree(state)
 }
