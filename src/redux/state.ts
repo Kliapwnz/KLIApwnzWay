@@ -64,7 +64,7 @@ export const store: StoreType = {
       this._state.profilePage.newPostText = newText
       this._onChange()
    },
-   subscribe(observer: () => void) {
+   subscribe(observer) {
       this._onChange = observer
    },
 }
