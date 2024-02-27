@@ -60,7 +60,7 @@ export let state: RootStateType = {
    sidebar: {}
 }
 
-export let addMessage = (message: string) => {
+export const addMessage = (message: string) => {
    let newMessage: MessageType = {
       id: new Date().getTime(),
       message: message
@@ -68,12 +68,12 @@ export let addMessage = (message: string) => {
    state.dialogsPage.messages.push(newMessage)
    rerenderEntireTree(state)
 }
-export let updateMessageText = (newText: string) => {
+export const updateMessageText = (newText: string) => {
    state.dialogsPage.newMessageText = newText
    rerenderEntireTree(state)
 }
 
-export let addPost = (post: string) => {
+export const addPost = (post: string) => {
    let newPost: PostType = {
       id: new Date().getTime(),
       text: post,
@@ -83,7 +83,7 @@ export let addPost = (post: string) => {
    rerenderEntireTree(state)
 }
 
-export let updatePostText = (newText: string) => {
+export const updatePostText = (newText: string) => {
    state.profilePage.newPostText = newText
    rerenderEntireTree(state)
 }
