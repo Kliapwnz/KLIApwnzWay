@@ -4,8 +4,8 @@ export type StoreType = {
    updateMessageText: (newText: string) => void
    addPost: (post: string) => void
    updatePostText: (newText: string) => void
-   _onChange:()=>void
-   subscribe:(observer: () => void)=>void
+   _onChange: () => void
+   subscribe: (observer: () => void) => void
 }
 
 export const store: StoreType = {
