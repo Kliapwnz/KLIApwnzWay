@@ -37,7 +37,7 @@ export const Dialogs = (props: DialogsType) => {
                />
             </div>
             <div>
-               <button onClick={addMessage}>send message</button>
+               <button onClick={addMessage} className={s.button}>send message</button>
             </div>
          </div>
       </div>

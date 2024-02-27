@@ -28,10 +28,12 @@ export const MyPosts = (props: MyPostsType) => {
          <div>
             <div>
                <textarea value={props.text}
-                         onChange={onPostChange}/>
+                         onChange={onPostChange}
+                         placeholder="Что нового"
+               />
             </div>
             <div>
-               <button onClick={addPost}>Add Post</button>
+               <button onClick={addPost} className={s.button}>Add Post</button>
             </div>
          </div>
          <div className={s.posts}>

@@ -1,15 +1,17 @@
 .nav {
     grid-area: n;
-    background-color: #1B221B;
+    background-color: #555555;
 }
 
 .item {
     color: white;
     text-decoration: none;
-
 }
 
 .active {
+    text-decoration: black;
     color: #27aae1;
-    text-decoration: none;
+}
+.item:hover {
+    color: #27aae1;
 }
