@@ -6,7 +6,7 @@ import {ActionTypes, ProfilePageType} from "../../redux/state";
 
 type ProfileType = {
    profile: ProfilePageType
-   dispatch: (action:ActionTypes) => void
+   dispatch: (action: ActionTypes) => void
 
 }
 
@@ -18,7 +18,7 @@ export const Profile = (props: ProfileType) => {
          <MyPosts posts={props.profile.posts}
                   dispatch={props.dispatch}
                   text={props.profile.newPostText}
-                 />
+         />
       </div>
    );
 };
