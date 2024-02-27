@@ -1,6 +1,19 @@
-import React from 'react';
-import './index.css';
-import {state} from "./redux/state";
-import {rerenderEntireTree} from "./rerenderEntireTree";
+import {addMessage, addPost, RootStateType, state, updateMessageText, updatePostText} from "./redux/state";
+import ReactDOM from "react-dom";
+import App from "./App";
+import React from "react";
 
-rerenderEntireTree(state)
+let rerenderEntireTree = () => {
+   ReactDOM.render(
+      <App state={state}
+           addPost={addPost}
+           updatePostText={updatePostText}
+           text={state.profilePage.newPostText}
+           addMessage={addMessage}
+           messageText={state.dialogsPage.newMessageText}
+           updateMessageText={updateMessageText}
+      />,
+      document.getElementById('root')
+   );
+}
+rerenderEntireTree()

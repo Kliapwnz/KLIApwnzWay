@@ -1,5 +1,7 @@
-import {rerenderEntireTree} from "../rerenderEntireTree";
-import {message} from "antd";
+let onChange= ()=> {
+   console.log("state changed")
+}
+
 
 export type MessageType = {
    id: number
@@ -57,7 +59,7 @@ export let state: RootStateType = {
       ],
       newMessageText: ""
    },
-   sidebar: {}
+   sidebar: {},
 }
 
 export const addMessage = (message: string) => {
@@ -66,11 +68,11 @@ export const addMessage = (message: string) => {
       message: message
    }
    state.dialogsPage.messages.push(newMessage)
-   rerenderEntireTree(state)
+   onChange()
 }
 export const updateMessageText = (newText: string) => {
    state.dialogsPage.newMessageText = newText
-   rerenderEntireTree(state)
+   onChange()
 }
 
 export const addPost = (post: string) => {
@@ -80,10 +82,10 @@ export const addPost = (post: string) => {
       likesCount: 0
    }
    state.profilePage.posts.push(newPost)
-   rerenderEntireTree(state)
+   onChange()
 }
 
 export const updatePostText = (newText: string) => {
    state.profilePage.newPostText = newText
-   rerenderEntireTree(state)
+   onChange()
 }
