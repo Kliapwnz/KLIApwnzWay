@@ -1,11 +1,12 @@
 export type StoreType = {
    _state: RootStateType
-   addMessage: (message: string) => void
+   addMessage: () => void
    updateMessageText: (newText: string) => void
-   addPost: (post: string) => void
+   addPost: () => void
    updatePostText: (newText: string) => void
    _onChange: () => void
    subscribe: (observer: () => void) => void
+   getState: () => RootStateType
 }
 
 export const store: StoreType = {
@@ -39,10 +40,10 @@ export const store: StoreType = {
    _onChange() {
       console.log("state changed")
    },
-   addMessage(message: string) {
+   addMessage() {
       let newMessage: MessageType = {
          id: new Date().getTime(),
-         message: message
+         message: this._state.dialogsPage.newMessageText
       }
       this._state.dialogsPage.messages.push(newMessage)
       this._onChange()
@@ -51,10 +52,10 @@ export const store: StoreType = {
       this._state.dialogsPage.newMessageText = newText
       this._onChange()
    },
-   addPost(post: string) {
+   addPost() {
       let newPost: PostType = {
          id: new Date().getTime(),
-         text: post,
+         text: this._state.profilePage.newPostText,
          likesCount: 0
       }
       this._state.profilePage.posts.push(newPost)
@@ -67,6 +68,9 @@ export const store: StoreType = {
    subscribe(observer) {
       this._onChange = observer
    },
+   getState() {
+      return this._state
+   }
 }
 
 

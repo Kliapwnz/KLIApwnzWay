@@ -7,7 +7,7 @@ type MyPostsType = {
    posts: PostType[]
    addPost: (post: string) => void
    updatePostText: (newText: string) => void
-   text: string
+   text:string
 }
 
 export const MyPosts = (props: MyPostsType) => {
