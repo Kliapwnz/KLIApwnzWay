@@ -1,4 +1,5 @@
 import {rerenderEntireTree} from "../rerenderEntireTree";
+import {message} from "antd";
 
 export type MessageType = {
    id: number
@@ -21,6 +22,7 @@ export type ProfilePageType = {
 export type DialogPageType = {
    dialogs: Array<DialogsType>
    messages: Array<MessageType>
+   newMessageText:string
 }
 
 export type SidebarType = {}
@@ -52,9 +54,23 @@ export let state: RootStateType = {
          {id: 1, message: "Hi"},
          {id: 2, message: "How are you?"},
          {id: 3, message: "Have a good day!"},
-      ]
+      ],
+      newMessageText:""
    },
    sidebar: {}
+}
+
+export let addMessage = (message:string) => {
+   let newMessage:MessageType = {
+      id: new Date().getTime(),
+      message:message
+   }
+   state.dialogsPage.messages.push(newMessage)
+   rerenderEntireTree(state)
+}
+export let updateMessageText = (newText:string) => {
+   state.dialogsPage.newMessageText = newText
+   rerenderEntireTree(state)
 }
 
 export let addPost = (post: string) => {

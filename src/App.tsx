@@ -5,13 +5,17 @@ import {NavBar} from "./components/NavBar/NavBar";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Profile} from "./components/Profile/Profile";
 import {Dialogs} from "./components/MyMessages/Dialogs";
-import {RootStateType, updatePostText} from "./redux/state";
+import {RootStateType, updateMessageText, updatePostText} from "./redux/state";
+
 
 type AppType = {
    state: RootStateType
    addPost: (post: string) => void
    updatePostText: (newText: string) => void
-   text:string
+   text: string
+   addMessage: (message: string) => void
+   messageText:string
+   updateMessageText:(newText:string)=> void
 }
 
 function App(props: AppType) {
@@ -30,6 +34,9 @@ function App(props: AppType) {
                          />}/>
                   <Route path="/dialogs/*"
                          element={<Dialogs dialogs={props.state.dialogsPage}
+                                           addMessage={props.addMessage}
+                                           messageText={props.messageText}
+                                           updateMessageText={props.updateMessageText}
                          />}/>
                </Routes>
             </div>
