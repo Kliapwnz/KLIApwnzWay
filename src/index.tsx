@@ -1,4 +1,4 @@
-import {addMessage, addPost, RootStateType, state, updateMessageText, updatePostText} from "./redux/state";
+import {addMessage, addPost, RootStateType, state, subscribe, updateMessageText, updatePostText} from "./redux/state";
 import ReactDOM from "react-dom";
 import App from "./App";
 import React from "react";
@@ -17,3 +17,4 @@ let rerenderEntireTree = () => {
    );
 }
 rerenderEntireTree()
+subscribe(rerenderEntireTree)

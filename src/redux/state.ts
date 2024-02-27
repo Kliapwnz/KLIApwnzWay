@@ -1,7 +1,6 @@
-let onChange= ()=> {
-   console.log("state changed")
-}
+let onChange = () => {
 
+}
 
 export type MessageType = {
    id: number
@@ -16,7 +15,6 @@ export type PostType = {
    text: string
    likesCount: number
 }
-
 export type ProfilePageType = {
    posts: Array<PostType>
    newPostText: string
@@ -26,7 +24,6 @@ export type DialogPageType = {
    messages: Array<MessageType>
    newMessageText: string
 }
-
 export type SidebarType = {}
 export type RootStateType = {
    profilePage: ProfilePageType
@@ -74,7 +71,6 @@ export const updateMessageText = (newText: string) => {
    state.dialogsPage.newMessageText = newText
    onChange()
 }
-
 export const addPost = (post: string) => {
    let newPost: PostType = {
       id: new Date().getTime(),
@@ -84,8 +80,10 @@ export const addPost = (post: string) => {
    state.profilePage.posts.push(newPost)
    onChange()
 }
-
 export const updatePostText = (newText: string) => {
    state.profilePage.newPostText = newText
    onChange()
+}
+export const subscribe = (observer: () => void) => {
+   onChange = observer
 }

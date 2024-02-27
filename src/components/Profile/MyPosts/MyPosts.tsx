@@ -10,7 +10,6 @@ type MyPostsType = {
    text: string
 }
 
-
 export const MyPosts = (props: MyPostsType) => {
 
 
@@ -21,7 +20,7 @@ export const MyPosts = (props: MyPostsType) => {
    let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
       props.updatePostText(e.currentTarget.value)
    }
-   let postElement = props.posts.map(el => <Post text={el.text} likesCount={el.likesCount}/>)
+   let postElement = props.posts.map(el => <Post key={el.id} text={el.text} likesCount={el.likesCount}/>)
 
    return (
       <div className={s.postsBlock}>
