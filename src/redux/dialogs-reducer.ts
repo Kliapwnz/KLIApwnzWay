@@ -17,16 +17,18 @@ export const newMessageTextAC = (newMessageText: string) => {
    } as const
 }
 export const dialogsReducer = (state: DialogPageType, action: ActionTypes) => {
-   if (action.type === "ADD-MESSAGE") {
-      let newMessage: MessageType = {
-         id: new Date().getTime(),
-         message: action.messageText
-      }
-      state.messages.push(newMessage)
-
-   } else if (action.type === "CHANGE-NEW-MESSAGE-TEXT") {
-      state.newMessageText = action.newMessageText
-
+   switch (action.type) {
+      case "ADD-MESSAGE":
+         let newMessage: MessageType = {
+            id: new Date().getTime(),
+            message: action.messageText
+         }
+         state.messages.push(newMessage)
+         return state
+      case "CHANGE-NEW-MESSAGE-TEXT":
+         state.newMessageText = action.newMessageText
+         return state
+      default:
+         return state
    }
-   return state
 }
