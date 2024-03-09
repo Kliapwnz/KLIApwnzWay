@@ -43,22 +43,35 @@ export type ActionTypes = AddPostActionType
    | AddMessageActionType
    | newMessageTextActionType
 
-type AddPostActionType = {
-   type: "ADD-POST",
-   postText: string
-}
+type AddPostActionType = ReturnType<typeof addPostAC>
 
-type ChangeNewPostTextActionType = {
-   type: "CHANGE-NEW-POST-TEXT",
-   newText: string
+type ChangeNewPostTextActionType = ReturnType<typeof changeNewPostTextAC>
+type AddMessageActionType = ReturnType<typeof addMessageAC>
+type newMessageTextActionType = ReturnType<typeof newMessageTextAC>
+
+export const addPostAC = (postText: string) => {
+   return {
+      type: "ADD-POST",
+      postText
+   } as const
 }
-type AddMessageActionType = {
-   type: "ADD-MESSAGE",
-   messageText: string
+export const changeNewPostTextAC = (newText: string) => {
+   return {
+      type: "CHANGE-NEW-POST-TEXT",
+      newText
+   } as const
 }
-type newMessageTextActionType = {
-   type: "CHANGE-NEW-MESSAGE-TEXT",
-   newMessageText: string
+export const addMessageAC = (messageText: string) => {
+   return {
+      type: "ADD-MESSAGE",
+      messageText
+   } as const
+}
+export const newMessageTextAC = (newMessageText: string) => {
+   return {
+      type: "CHANGE-NEW-MESSAGE-TEXT",
+      newMessageText
+   }as const
 }
 
 export const store: StoreType = {
@@ -146,30 +159,6 @@ export const store: StoreType = {
          this._state.dialogsPage.newMessageText = action.newMessageText
          this._onChange()
       }
-   }
-}
-export const addPostAC = (postText: string): AddPostActionType => {
-   return {
-      type: "ADD-POST",
-      postText
-   } as const
-}
-export const ChangeNewPostTextAC = (newText: string): ChangeNewPostTextActionType => {
-   return {
-      type: "CHANGE-NEW-POST-TEXT",
-      newText
-   } as const
-}
-export const AddMessageAC = (messageText: string): AddMessageActionType => {
-   return {
-      type: "ADD-MESSAGE",
-      messageText
-   } as const
-}
-export const newMessageTextAC = (newMessageText:string):newMessageTextActionType =>{
-   return {
-      type:"CHANGE-NEW-MESSAGE-TEXT",
-      newMessageText
    }
 }
 
