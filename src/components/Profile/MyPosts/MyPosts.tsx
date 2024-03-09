@@ -9,6 +9,8 @@ type MyPostsType = {
    text: string
 }
 
+
+
 export const MyPosts = (props: MyPostsType) => {
 
 
