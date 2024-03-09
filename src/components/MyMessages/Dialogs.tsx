@@ -34,6 +34,7 @@ export const Dialogs = (props: DialogsType) => {
             <div>
                <textarea value={props.dialogs.newMessageText}
                          onChange={onMessageChange}
+                         placeholder="Enter your message"
                />
             </div>
             <div>
