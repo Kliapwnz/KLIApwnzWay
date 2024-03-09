@@ -15,7 +15,6 @@ type AppType = {
 
 function App(props: AppType) {
    return (
-      <BrowserRouter>
          <div className="app-wrapper">
             <Header/>
             <NavBar/>
@@ -32,9 +31,7 @@ function App(props: AppType) {
                          />}/>
                </Routes>
             </div>
-
          </div>
-      </BrowserRouter>
    );
 }
 
