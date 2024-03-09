@@ -133,6 +133,12 @@ export const ChangeNewPostTextAC = (newText: string): ChangeNewPostTextActionTyp
       newText
    }
 }
+export const AddMessageAC = (messageText: string): AddMessageActionType => {
+   return {
+      type: "ADD-MESSAGE",
+      messageText
+   }
+}
 
 export type MessageType = {
    id: number
