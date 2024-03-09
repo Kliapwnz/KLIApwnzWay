@@ -29,7 +29,9 @@ export const profileReducer = (state: ProfilePageType, action: ActionTypes) => {
          return state
       case "CHANGE-NEW-POST-TEXT":
          state.newPostText = action.newText
-
+         return state
+      default:
+         return state;
    }
-   return state
+
 }
