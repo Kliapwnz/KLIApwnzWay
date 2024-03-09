@@ -139,6 +139,12 @@ export const AddMessageAC = (messageText: string): AddMessageActionType => {
       messageText
    } as const
 }
+export const newMessageTextAC = (newMessageText:string):newMessageTextActionType =>{
+   return {
+      type:"CHANGE-NEW-MESSAGE-TEXT",
+      newMessageText
+   }
+}
 
 export type MessageType = {
    id: number
