@@ -1,5 +1,32 @@
-import {ActionTypes, DialogPageType} from "./state";
+import {ActionTypes, DialogPageType, MessageType} from "./state";
 
-const dialogsReducer = (state: DialogPageType, action: ActionTypes) => {
+export type AddMessageActionType = ReturnType<typeof addMessageAC>
+export type newMessageTextActionType = ReturnType<typeof newMessageTextAC>
+
+
+export const addMessageAC = (messageText: string) => {
+   return {
+      type: "ADD-MESSAGE",
+      messageText
+   } as const
+}
+export const newMessageTextAC = (newMessageText: string) => {
+   return {
+      type: "CHANGE-NEW-MESSAGE-TEXT",
+      newMessageText
+   } as const
+}
+export const dialogsReducer = (state: DialogPageType, action: ActionTypes) => {
+   if (action.type === "ADD-MESSAGE") {
+      let newMessage: MessageType = {
+         id: new Date().getTime(),
+         message: action.messageText
+      }
+      state.messages.push(newMessage)
+
+   } else if (action.type === "CHANGE-NEW-MESSAGE-TEXT") {
+      state.newMessageText = action.newMessageText
+
+   }
    return state
 }

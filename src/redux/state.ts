@@ -1,3 +1,8 @@
+import {AddPostActionType, ChangeNewPostTextActionType, profileReducer} from "./profile-reducer";
+import {type} from "os";
+import {AddMessageActionType, dialogsReducer, newMessageTextActionType} from "./dialogs-reducer";
+import {sidebarReducer} from "./sidebar-reducer";
+
 export type StoreType = {
    _state: RootStateType
    addMessage: () => void
@@ -43,36 +48,6 @@ export type ActionTypes = AddPostActionType
    | AddMessageActionType
    | newMessageTextActionType
 
-type AddPostActionType = ReturnType<typeof addPostAC>
-
-type ChangeNewPostTextActionType = ReturnType<typeof changeNewPostTextAC>
-type AddMessageActionType = ReturnType<typeof addMessageAC>
-type newMessageTextActionType = ReturnType<typeof newMessageTextAC>
-
-export const addPostAC = (postText: string) => {
-   return {
-      type: "ADD-POST",
-      postText
-   } as const
-}
-export const changeNewPostTextAC = (newText: string) => {
-   return {
-      type: "CHANGE-NEW-POST-TEXT",
-      newText
-   } as const
-}
-export const addMessageAC = (messageText: string) => {
-   return {
-      type: "ADD-MESSAGE",
-      messageText
-   } as const
-}
-export const newMessageTextAC = (newMessageText: string) => {
-   return {
-      type: "CHANGE-NEW-MESSAGE-TEXT",
-      newMessageText
-   }as const
-}
 
 export const store: StoreType = {
    _state: {
@@ -137,28 +112,10 @@ export const store: StoreType = {
       return this._state
    },
    dispatch(action) {
-      if (action.type === "ADD-POST") {
-         let newPost: PostType = {
-            id: new Date().getTime(),
-            text: action.postText,
-            likesCount: 0
-         }
-         this._state.profilePage.posts.push(newPost)
-         this._onChange()
-      } else if (action.type === "CHANGE-NEW-POST-TEXT") {
-         this._state.profilePage.newPostText = action.newText
-         this._onChange()
-      } else if (action.type === "ADD-MESSAGE") {
-         let newMessage: MessageType = {
-            id: new Date().getTime(),
-            message: action.messageText
-         }
-         this._state.dialogsPage.messages.push(newMessage)
-         this._onChange()
-      } else if (action.type === "CHANGE-NEW-MESSAGE-TEXT") {
-         this._state.dialogsPage.newMessageText = action.newMessageText
-         this._onChange()
-      }
+      profileReducer(this._state.profilePage, action)
+      dialogsReducer(this._state.dialogsPage, action)
+      sidebarReducer(this._state.sidebar, action)
+      this._onChange()
    }
 }
 
