@@ -124,8 +124,14 @@ export const store: StoreType = {
 export const addPostAC = (postText: string): AddPostActionType => {
    return {
       type: "ADD-POST",
-      postText: postText
+      postText
    } as const
+}
+export const ChangeNewPostTextAC = (newText: string): ChangeNewPostTextActionType => {
+   return {
+      type: "CHANGE-NEW-POST-TEXT",
+      newText
+   }
 }
 
 export type MessageType = {
