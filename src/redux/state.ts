@@ -121,7 +121,12 @@ export const store: StoreType = {
       }
    }
 }
-
+export const addPostAC = (postText: string): AddPostActionType => {
+   return {
+      type: "ADD-POST",
+      postText: postText
+   } as const
+}
 
 export type MessageType = {
    id: number
