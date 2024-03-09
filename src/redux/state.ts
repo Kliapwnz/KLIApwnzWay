@@ -10,6 +10,34 @@ export type StoreType = {
    dispatch: (action: ActionTypes) => void
 }
 
+export type MessageType = {
+   id: number
+   message: string
+}
+export type DialogsType = {
+   id: number
+   name: string
+}
+export type PostType = {
+   id: number
+   text: string
+   likesCount: number
+}
+export type ProfilePageType = {
+   posts: Array<PostType>
+   newPostText: string
+}
+export type DialogPageType = {
+   dialogs: Array<DialogsType>
+   messages: Array<MessageType>
+   newMessageText: string
+}
+export type SidebarType = {}
+export type RootStateType = {
+   profilePage: ProfilePageType
+   dialogsPage: DialogPageType
+   sidebar: SidebarType
+}
 export type ActionTypes = AddPostActionType
    | ChangeNewPostTextActionType
    | AddMessageActionType
@@ -32,7 +60,6 @@ type newMessageTextActionType = {
    type: "CHANGE-NEW-MESSAGE-TEXT",
    newMessageText: string
 }
-
 
 export const store: StoreType = {
    _state: {
@@ -146,34 +173,6 @@ export const newMessageTextAC = (newMessageText:string):newMessageTextActionType
    }
 }
 
-export type MessageType = {
-   id: number
-   message: string
-}
-export type DialogsType = {
-   id: number
-   name: string
-}
-export type PostType = {
-   id: number
-   text: string
-   likesCount: number
-}
-export type ProfilePageType = {
-   posts: Array<PostType>
-   newPostText: string
-}
-export type DialogPageType = {
-   dialogs: Array<DialogsType>
-   messages: Array<MessageType>
-   newMessageText: string
-}
-export type SidebarType = {}
-export type RootStateType = {
-   profilePage: ProfilePageType
-   dialogsPage: DialogPageType
-   sidebar: SidebarType
-}
 
 
 
