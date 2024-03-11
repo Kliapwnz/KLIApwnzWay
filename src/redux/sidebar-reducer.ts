@@ -1,4 +1,4 @@
-import {ActionTypes, ProfilePageType, SidebarType} from "./state";
+import {ActionTypes, ProfilePageType, SidebarType} from "./store";
 
 export const sidebarReducer = (state: SidebarType, action: ActionTypes) => {
    return state

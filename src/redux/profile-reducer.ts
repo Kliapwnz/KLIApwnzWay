@@ -1,4 +1,4 @@
-import {ActionTypes, PostType, ProfilePageType} from "./state";
+import {ActionTypes, PostType, ProfilePageType} from "./store";
 
 export type AddPostActionType = ReturnType<typeof addPostAC>
 

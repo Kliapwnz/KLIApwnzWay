@@ -1,4 +1,4 @@
-import {ActionTypes, DialogPageType, MessageType} from "./state";
+import {ActionTypes, DialogPageType, MessageType} from "./store";
 
 export type AddMessageActionType = ReturnType<typeof addMessageAC>
 export type newMessageTextActionType = ReturnType<typeof newMessageTextAC>
