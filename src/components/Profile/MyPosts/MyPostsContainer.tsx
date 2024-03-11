@@ -21,7 +21,6 @@ export const MyPostsContainer = (props: MyPostsType) => {
    let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
       props.dispatch(changeNewPostTextAC(e.currentTarget.value))
    }
-   let postElement = props.posts.map(el => <Post key={el.id} text={el.text} likesCount={el.likesCount}/>)
 
    return (
       <MyPosts posts={props.posts} addPost={addPost} updatePostText={onPostChange} text={props.text}/>
