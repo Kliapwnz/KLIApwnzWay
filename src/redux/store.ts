@@ -1,5 +1,4 @@
 import {AddPostActionType, ChangeNewPostTextActionType, profileReducer} from "./profile-reducer";
-import {type} from "os";
 import {AddMessageActionType, dialogsReducer, newMessageTextActionType} from "./dialogs-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
 
