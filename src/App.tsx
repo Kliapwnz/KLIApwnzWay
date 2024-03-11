@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Header} from "./components/Header/Header";
 import {NavBar} from "./components/NavBar/NavBar";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {Profile} from "./components/Profile/Profile";
 import {Dialogs} from "./components/MyMessages/Dialogs";
 import {ActionTypes, RootStateType} from "./redux/store";
