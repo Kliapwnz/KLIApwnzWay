@@ -5,33 +5,34 @@ import {NavBar} from "./components/NavBar/NavBar";
 import {Route, Routes} from "react-router-dom";
 import {Profile} from "./components/Profile/Profile";
 import {Dialogs} from "./components/MyMessages/Dialogs";
-import {ActionTypes, RootStateType} from "./redux/store";
+import {ActionTypes} from "./redux/store";
+import {AppRootStateType} from "./redux/redux-store";
 
 
 type AppType = {
-   state: RootStateType
+   state: AppRootStateType
    dispatch: (action: ActionTypes) => void
 }
 
 function App(props: AppType) {
    return (
-         <div className="app-wrapper">
-            <Header/>
-            <NavBar/>
-            <div className="app-wrapper-content">
-               <Routes>
-                  <Route path="/profile"
-                         element={<Profile profile={props.state.profilePage}
-                                           dispatch={props.dispatch}
+      <div className="app-wrapper">
+         <Header/>
+         <NavBar/>
+         <div className="app-wrapper-content">
+            <Routes>
+               <Route path="/profile"
+                      element={<Profile profile={props.state.profileReducer}
+                                        dispatch={props.dispatch}
 
-                         />}/>
-                  <Route path="/dialogs/*"
-                         element={<Dialogs dialogs={props.state.dialogsPage}
-                                           dispatch={props.dispatch}
-                         />}/>
-               </Routes>
-            </div>
+                      />}/>
+               <Route path="/dialogs/*"
+                      element={<Dialogs dialogs={props.state.dialogsReducer}
+                                        dispatch={props.dispatch}
+                      />}/>
+            </Routes>
          </div>
+      </div>
    );
 }
 

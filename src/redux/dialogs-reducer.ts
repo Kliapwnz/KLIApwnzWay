@@ -16,7 +16,24 @@ export const newMessageTextAC = (newMessageText: string) => {
       newMessageText
    } as const
 }
-export const dialogsReducer = (state: DialogPageType, action: ActionTypes) => {
+
+let initialState: DialogPageType = {
+   dialogs: [
+      {id: 1, name: "Sergio Aguero"},
+      {id: 2, name: "Erling Haaland"},
+      {id: 3, name: "David Silva"},
+      {id: 4, name: "Bernardo Silva"},
+      {id: 5, name: "Kyle Walker"},
+      {id: 6, name: "Phil Foden"},
+   ],
+   messages: [
+      {id: 1, message: "Hi"},
+      {id: 2, message: "How are you?"},
+      {id: 3, message: "Have a good day!"},
+   ],
+   newMessageText: ""
+}
+export const dialogsReducer = (state = initialState, action: ActionTypes) => {
    switch (action.type) {
       case "ADD-MESSAGE":
          let newMessage: MessageType = {
