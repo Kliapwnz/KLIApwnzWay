@@ -7,12 +7,14 @@ import {BrowserRouter} from "react-router-dom";
 let rerenderEntireTree = () => {
    ReactDOM.render(
       <BrowserRouter>
-      <App state={store.getState()}
-           dispatch={store.dispatch.bind(store)}
-      />
+         <App state={store.getState()}
+              dispatch={store.dispatch.bind(store)}
+         />
       </BrowserRouter>,
       document.getElementById('root')
    );
 }
 rerenderEntireTree()
-store.subscribe(rerenderEntireTree)
+store.subscribe(() => {
+   rerenderEntireTree()
+})
